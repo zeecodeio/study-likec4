@@ -28,3 +28,9 @@ npm install --global likec4
 ```bash
 likec4 serve
 ```
+
+## Some links
+
+- [LikeC4](https://likec4.com/)
+- [LikeC4 GitHub](https://github.com/likec4/likec4)
+- [LikeC4 Tutorial](https://likec4.dev/tutorial/)
