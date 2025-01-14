@@ -1,0 +1,53 @@
+specification {
+  element actor
+  element system
+//   element component
+}
+
+model {
+  sassCustomer = actor 'Customer' {
+    description 'The regular sassCustomer of the system'
+    description 'Our dear sassCustomer'
+  }
+
+  saas = system 'Our SaaS' {
+    component ui 'Frontend' {
+      description 'Nextjs application, hosted on Vercel'
+      style {
+        icon tech:nextjs
+        shape browser
+      }
+    }
+    component backend 'Backend Services' {
+      description '
+        Implements business logic
+        and exposes as REST API
+      '
+    }
+
+    // UI requests data from the Backend
+    ui -> backend 'fetches via HTTPS'
+  }
+
+  // Customer uses the UI
+  sassCustomer -> ui 'opens in browser'
+  sassCustomer -> saas 'enjoys our product'
+}
+
+views {
+
+  view sassIndex {
+    title 'Landscape view'
+
+    include *
+  }
+
+  view of saas {
+    include *
+
+    style sassCustomer {
+      color muted
+    }
+  }
+
+}
